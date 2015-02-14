@@ -23,7 +23,7 @@
 			        <ul>
 <?php
 			            foreach ( $devtools as $tool ) {
-			            	printf( '<li><a href="%1$s">%2$s</a></li>', $tool['url'], $tool['name'] );
+			            	printf( '<li><a href="%1$s" target="_blank">%2$s</a></li>', $tool['url'], $tool['name'] );
 			            }
 ?>
 			        </ul>
@@ -47,7 +47,7 @@
 
 		            echo '<li>';
 
-		            $siteroot = sprintf( 'http://%1$s.%2$s.%3$s', $project, $dirname, $tld );
+		            $siteroot = sprintf( 'http://%1$s.%2$s', $project, $tld );
 
 		            // Display an icon for the site
 		            $icon_output = '<span class="no-img"></span>';
@@ -76,7 +76,7 @@
 					$adminurl = '';
 					// We'll start by checking if the site looks like it's a WordPress site
 					if ( is_dir( $file . '/wp-admin' ) )
-						$adminurl = sprintf( 'http://%1$s/wp-admin', $siteroot );
+						$adminurl = sprintf( '%1$s/wp-login.php', $siteroot );
 
 					// If the user has defined an adminurl for the project we'll use that instead
 		            if (isset($siteoptions[$project]) &&  is_array( $siteoptions[$project] ) && array_key_exists( 'adminurl', $siteoptions[$project] ) )
