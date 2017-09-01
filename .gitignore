@@ -1,2 +1,4 @@
 config.php
+create.php
 .DS_Store
+.well-known
